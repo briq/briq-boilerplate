@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= organization
+  .users
+    for user in users
+      .user
+        form(action='/transactions', method='post')
+          input(type='hidden', name='userId', value=user.id)
+
+          .username= user.username
+          .amount #{user.activeBalance} briqs
+          button.btn-submit(type='submit') Give 1 briq

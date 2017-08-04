@@ -1,0 +1,31 @@
+{
+  "name": "briq-boilerplate",
+  "version": "0.0.1",
+  "description": "Briq application to reward users who report bugs",
+  "main": "app/app.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "briq-api": "^0.0.6",
+    "connect-assets": "^5.4.0",
+    "express": "^4.15.3",
+    "jade": "^1.11.0",
+    "morgan": "^1.8.2"
+  },
+  "devDependencies": {
+    "dotenv": "^2.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.1.3",
+    "eslint-plugin-import": "^2.2.0",
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "start": "node bin/www",
+    "dev": "NODE_ENV=development nodemon -x 'node -r dotenv/config' bin/www",
+    "lint": "eslint --ext .js app/app.js app/bin app/config app/lib app/models app/routes",
+    "lint:fix": "eslint --ext .js --fix app/app.js app/bin app/config app/lib app/models app/routes"
+  },
+  "engines": {
+    "node": "6.x"
+  },
+  "private": true
+}
