@@ -17,10 +17,11 @@ router.get('/', (req, res) => {
 });
 
 router.post('/transactions', (req, res) => {
-  const { userId } = req.body;
+  const { userToId, userFromId } = req.body;
   return briqOrganization
     .createTransaction({
-      to: userId,
+      from: userFromId,
+      to: userToId,
       comment: ':hugging_face:',
       amount: 1
     })

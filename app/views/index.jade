@@ -5,9 +5,11 @@ block content
   .users
     for user in users
       .user
+        .username= user.username
+        .amount #{user.activeBalance} briqs
         form(action='/transactions', method='post')
-          input(type='hidden', name='userId', value=user.id)
-
-          .username= user.username
-          .amount #{user.activeBalance} briqs
+          input(type='hidden', name='userToId', value=user.id)
           button.btn-submit(type='submit') Give 1 briq
+        form(action='/transactions', method='post')
+          input(type='hidden', name='userFromId', value=user.id)
+          button.btn-submit(type='submit') Spend 1 briq

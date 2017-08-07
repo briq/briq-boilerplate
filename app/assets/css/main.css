@@ -12,6 +12,10 @@
   width: 150px;
 }
 
+.user form {
+  display: inline-block;
+}
+
 .user .btn-submit {
   margin-left: 10px;
 }
